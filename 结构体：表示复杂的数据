@@ -1,0 +1,46 @@
+
+定义的三种方式：（推荐第一种）
+1.
+struct Student//在主函数外面定义数据类型Student
+{
+int age;
+float score;
+char sex;
+};
+int main(void)
+{struct Student st = {80, 66.6,  'F'}}
+
+2.
+struct Student2
+{
+int age;
+float score;
+char sex;
+}st2;//在这里就定义了一个变量
+
+3.
+struct
+{
+int age;
+float score;
+char sex;
+}st3;//在这里就定义了一个变量,不利于后续使用
+
+赋值两种方式和使用
+
+
+只有在定义的同时赋值可以整体赋初值
+之后一个一个赋值例如st2.age = 20;
+
+st.age = 88;
+
+struct Student * pst = &st; 
+pst->age = 88;
+
+注意：结构体定义要加分号
+
+
+用函数改变结构体的值时，只能用地址；
+用函数输出结构体的值时，可以用变量，也可以用地址。但指针速度快，内存少，推荐用指针。而指针不安全的问题也可以通过const来解决
+
+在c专家编程中认为应该少用typedef来让代码更规范，但不能否认，typedef可以用来让结构体使用起来更简单，并且利于多人合作。
